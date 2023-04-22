@@ -22,19 +22,20 @@ from user import urls
 from monthReport import urls
 from relation import urls
 from django.conf import settings
+from .settings import MEDIA_ROOT,STATIC_ROOT
 from django.conf.urls.static import static
 from django.views.static import serve
 from django.urls import re_path
 
 urlpatterns = [
-    path('admin/', include(admin.site.urls)),
+    path('admin/', admin.site.urls),
     path('month/',include('monthReport.urls')),
     path('user/',include('user.urls')),
     path('task/',include('task.urls')),
     path('routine/',include('routine.urls')),
     path('relation/',include('relation.urls')),
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
-    re_path(r'^static/(?:.*)$', serve, {'document_root': settings.STATIC_ROOT, }),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root':MEDIA_ROOT}),
+    re_path(r'^static/(?:.*)$', serve, {'document_root': STATIC_ROOT, }),
 
 ] 
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 필요 ㅌ
