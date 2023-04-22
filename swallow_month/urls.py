@@ -27,7 +27,7 @@ from django.views.static import serve
 from django.urls import re_path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include(admin.site.urls)),
     path('month/',include('monthReport.urls')),
     path('user/',include('user.urls')),
     path('task/',include('task.urls')),
