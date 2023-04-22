@@ -18,7 +18,7 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 환경변수 세팅 
-env = environ.Env(DEBUG=(bool, True))
+env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(
     env_file=os.path.join(BASE_DIR, '.env')
 )
