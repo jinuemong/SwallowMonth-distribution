@@ -32,7 +32,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static") # 정적 파일 경로 지정 & �
 # SECRET_KEY = 'django-insecure-7v#0vxr@zwkkk-a0lyomz)t=oqm)%pa%#-7v$x6(7o#@8&gsj5'
 SECRET_KEY = env('SECRET_KEY')
  
-DEBUG = env('DEBUG') 
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
